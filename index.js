@@ -20,7 +20,7 @@ io.on('connection', (socket) => {
 		const { user } = addUser({ name, room });
 
 		socket.emit('message', {
-			data: { user: { name: 'Админ' }, message: `${user.name}, добро пожаловать во дружелюбный чат` },
+			data: { user: { name: 'Админ' }, message: `${user.name}, добро пожаловать в дружелюбный чат` },
 		});
 
 		socket.broadcast.to(user.room).emit('message', {
